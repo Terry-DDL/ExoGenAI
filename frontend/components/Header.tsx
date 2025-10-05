@@ -1,19 +1,13 @@
-import Image from 'next/image';
 import styles from './Header.module.css';
 
 export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.brand}>
-        <Image
-          src="/images/exogen-logo.svg"
-          alt="ExoGen logo"
-          width={56}
-          height={56}
-        />
+        <span className={styles.brandMark} aria-hidden="true" />
         <span className={styles.brandName}>ExoGen</span>
       </div>
-      <nav className={styles.nav}>
+      <nav className={styles.nav} aria-label="Primary">
         <a href="#explore" className={styles.link}>
           Explore
         </a>

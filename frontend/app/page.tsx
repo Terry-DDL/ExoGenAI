@@ -1,26 +1,12 @@
 import { Header } from '@/components/Header';
 import styles from './page.module.css';
 
-const planetSummaries = [
-  {
-    name: '11 Com B',
-    year: '2007',
-    method: 'Radial Velocity',
-    facility: 'Xinglong Station'
-  },
-  {
-    name: 'Thestia-1',
-    year: '2017',
-    method: 'Transit',
-    facility: 'Placeholder Laboratory'
-  },
-  {
-    name: '14 And b',
-    year: '2008',
-    method: 'Radial Velocity',
-    facility: 'Qianyan Observatory'
-  }
-];
+const planetSummaries = Array.from({ length: 12 }).map((_, index) => ({
+  name: `Placeholder Planet ${String(index + 1).padStart(2, '0')}`,
+  year: '20XX',
+  method: 'Discovery Method',
+  facility: 'Placeholder Observatory'
+}));
 
 export default function Home() {
   return (
@@ -30,11 +16,12 @@ export default function Home() {
         <section className={styles.hero}>
           <div className={styles.heroImageWrapper} aria-hidden="true" />
           <div className={styles.heroContent}>
-            <span className={styles.heroSubtitle}>Current Exoplanets</span>
+            <span className={styles.heroSubtitle}>Current Catalogue</span>
             <h1 className={styles.heroTitle}>Exploring new worlds beyond our Solar System</h1>
             <p className={styles.heroDescription}>
-              Discover catalogued exoplanets, compare discovery methods, and prepare space for
-              future data visualisations powered by your mission APIs.
+              Browse a curated list of candidate planets, ready to be connected to the mission
+              datasets you will integrate. The monochrome interface keeps attention on the data
+              while leaving space for your future enhancements.
             </p>
           </div>
         </section>
@@ -45,7 +32,7 @@ export default function Home() {
               <div>
                 <h2 className={styles.panelTitle}>Explore the Planets</h2>
                 <p className={styles.panelSubtitle}>
-                  Search and filter upcoming datasets to curate your observation list.
+                  Scroll through the placeholder records and wire up your API when it is ready.
                 </p>
               </div>
             </div>
